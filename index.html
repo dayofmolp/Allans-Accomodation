@@ -11,7 +11,7 @@
     <h1>Allan's Accommodation</h1>
     <p>Premium Student Housing in Bellville South, Cape Town</p>
     <p>NSFAS Accredited | Bursaries Accepted | Shuttle Routes Nearby</p>
-    <button onclick="scrollToSection('contact')">Contact Us</button>
+    <button onclick="scrollToSection('properties')">View Properties</button>
   </header>
 
   <main>
@@ -31,28 +31,67 @@
       </div>
     </section>
 
-    <section class="properties">
-      <h2>Available Properties</h2>
-      <div class="property">
+    <section id="properties" class="properties">
+      <h2>Our Properties</h2>
+      <div class="property" onclick="showPopup('popup1')">
         <img src="https://via.placeholder.com/600x400" alt="Student Haven">
         <h3>Student Haven</h3>
-        <p>Location: Observatory, Cape Town</p>
-        <p>Features: WiFi, 24/7 Security, Study Areas, Communal Kitchen</p>
+        <p>Location: 32 Kasselvlei, Cape Town</p>
+        <span class="tag nsfas">NSFAS Accredited</span>
       </div>
-      <div class="property">
+
+      <div class="property" onclick="showPopup('popup2')">
         <img src="https://via.placeholder.com/600x400" alt="Academia House">
         <h3>Academia House</h3>
-        <p>Location: Rondebosch, Cape Town</p>
-        <p>Features: En-suite Bathrooms, Laundry Facilities, Common Room</p>
+        <p>Location: Fourie Street, Cape Town</p>
+        <span class="tag nsfas">NSFAS Accredited</span>
+      </div>
+
+      <div class="property" onclick="showPopup('popup3')">
+        <img src="https://via.placeholder.com/600x400" alt="Mimosa Residence">
+        <h3>Mimosa Residence</h3>
+        <p>Location: Mimosa, Cape Town</p>
+        <span class="tag nsfas">NSFAS Accredited</span>
       </div>
     </section>
   </main>
 
+  <!-- Pop-up Modals -->
+  <div class="popup" id="popup1">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('popup1')">&times;</span>
+      <h3>Student Haven</h3>
+      <p>Located at 32 Kasselvlei, with features like WiFi, 24/7 security, and a communal kitchen.</p>
+      <button class="contact-btn">Contact Us</button>
+    </div>
+  </div>
+
+  <div class="popup" id="popup2">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('popup2')">&times;</span>
+      <h3>Academia House</h3>
+      <p>Located at Fourie Street, with en-suite bathrooms, laundry facilities, and a common room.</p>
+      <button class="contact-btn">Contact Us</button>
+    </div>
+  </div>
+
+  <div class="popup" id="popup3">
+    <div class="popup-content">
+      <span class="close" onclick="closePopup('popup3')">&times;</span>
+      <h3>Mimosa Residence</h3>
+      <p>Located in Mimosa, with modern facilities, study areas, and a pool.</p>
+      <button class="contact-btn">Contact Us</button>
+    </div>
+  </div>
+
   <footer id="contact">
     <h2>Contact Us</h2>
-    <p>Phone: +27 (021) 123-4567</p>
-    <p>Email: info@allansaccommodation.com</p>
-    <p>Address: Bellville South, Cape Town</p>
+    <form id="contact-form">
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
   </footer>
 
   <script src="script.js"></script>
