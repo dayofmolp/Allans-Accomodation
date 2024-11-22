@@ -1,20 +1,31 @@
-// Smooth scroll to section
+// Scroll to a section
 function scrollToSection(id) {
-  document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
 }
 
-// Show popup
-function showPopup(popupId) {
-  document.getElementById(popupId).style.display = 'flex';
+// Show NSFAS Pop-up for Property
+function showNsfasPopup(property) {
+    const popup = document.getElementById('nsfas-popup');
+    const modalContent = document.querySelector('.popup-content p');
+    
+    modalContent.innerHTML = `This property (${property}) is NSFAS accredited, making it a great choice for students.`;
+    popup.style.display = 'block';
 }
 
-// Close popup
-function closePopup(popupId) {
-  document.getElementById(popupId).style.display = 'none';
+// Close NSFAS Pop-up
+function closeNsfasPopup() {
+    document.getElementById('nsfas-popup').style.display = 'none';
 }
 
-// Contact form submission alert (for demo purposes)
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  e.preventDefault();
-  alert('Your message has been sent!');
-});
+// Form Validation (Example)
+function validateForm() {
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    
+    if (!name || !email) {
+        alert('Please fill out all required fields.');
+        return false;
+    }
+    
+    return true;
+}
