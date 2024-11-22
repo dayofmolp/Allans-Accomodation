@@ -1,3 +1,5 @@
+# Define an updated version of the HTML with placeholders for the new features
+enhanced_html_content = """
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,86 +16,76 @@
     <button onclick="scrollToSection('properties')">View Properties</button>
   </header>
 
-  <main>
-    <section class="features">
-      <h2>Why Choose Us?</h2>
-      <div class="feature">
-        <h3>Prime Location</h3>
-        <p>Close to shuttle routes and universities</p>
+  <!-- Properties Section -->
+  <section id="properties" class="properties">
+    <h2>Our Properties</h2>
+    <div class="property-list">
+      <div class="property">
+        <h3>Kasselvlei Road</h3>
+        <p>Details about this property...</p>
       </div>
-      <div class="feature">
-        <h3>Modern Amenities</h3>
-        <p>Includes a pool, WiFi, and study-friendly spaces</p>
+      <div class="property">
+        <h3>Durham Road</h3>
+        <p>Details about this property...</p>
       </div>
-      <div class="feature">
-        <h3>Affordable Rates</h3>
-        <p>R4,000 - R7,000 per month</p>
-      </div>
-    </section>
-
-    <section id="properties" class="properties">
-      <h2>Our Properties</h2>
-      <div class="property" onclick="showPopup('popup1')">
-        <img src="https://via.placeholder.com/600x400" alt="Student Haven">
-        <h3>Student Haven</h3>
-        <p>Location: 32 Kasselvlei, Cape Town</p>
-        <span class="tag nsfas">NSFAS Accredited</span>
-      </div>
-
-      <div class="property" onclick="showPopup('popup2')">
-        <img src="https://via.placeholder.com/600x400" alt="Academia House">
-        <h3>Academia House</h3>
-        <p>Location: Fourie Street, Cape Town</p>
-        <span class="tag nsfas">NSFAS Accredited</span>
-      </div>
-
-      <div class="property" onclick="showPopup('popup3')">
-        <img src="https://via.placeholder.com/600x400" alt="Mimosa Residence">
-        <h3>Mimosa Residence</h3>
-        <p>Location: Mimosa, Cape Town</p>
-        <span class="tag nsfas">NSFAS Accredited</span>
-      </div>
-    </section>
-  </main>
-
-  <!-- Pop-up Modals -->
-  <div class="popup" id="popup1">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('popup1')">&times;</span>
-      <h3>Student Haven</h3>
-      <p>Located at 32 Kasselvlei, with features like WiFi, 24/7 security, and a communal kitchen.</p>
-      <button class="contact-btn">Contact Us</button>
+      <!-- Add other properties here -->
     </div>
-  </div>
+  </section>
 
-  <div class="popup" id="popup2">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('popup2')">&times;</span>
-      <h3>Academia House</h3>
-      <p>Located at Fourie Street, with en-suite bathrooms, laundry facilities, and a common room.</p>
-      <button class="contact-btn">Contact Us</button>
-    </div>
-  </div>
+  <!-- Student Tips Section -->
+  <section id="student-tips" class="student-tips">
+    <h2>Student Tips</h2>
+    <ul>
+      <li>Tip 1: Always pay your rent on time to maintain a good relationship with the landlord.</li>
+      <li>Tip 2: Keep communal areas clean to ensure harmony with housemates.</li>
+      <li>Tip 3: Use public transport options near the housing to save costs.</li>
+    </ul>
+  </section>
 
-  <div class="popup" id="popup3">
-    <div class="popup-content">
-      <span class="close" onclick="closePopup('popup3')">&times;</span>
-      <h3>Mimosa Residence</h3>
-      <p>Located in Mimosa, with modern facilities, study areas, and a pool.</p>
-      <button class="contact-btn">Contact Us</button>
-    </div>
-  </div>
-
-  <footer id="contact">
-    <h2>Contact Us</h2>
-    <form id="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
+  <!-- Booking Portal -->
+  <section id="booking" class="booking-portal">
+    <h2>Book Your Stay</h2>
+    <form action="#" method="POST">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="property">Preferred Property:</label>
+      <select id="property" name="property">
+        <option value="kasselvlei">Kasselvlei Road</option>
+        <option value="durham">Durham Road</option>
+        <!-- Add other properties as options -->
+      </select>
+      <label for="message">Message/Additional Requests:</label>
+      <textarea id="message" name="message"></textarea>
+      <button type="submit">Submit Booking</button>
     </form>
+  </section>
+
+  <!-- User Reviews Section -->
+  <section id="reviews" class="reviews">
+    <h2>What Our Residents Say</h2>
+    <div class="review">
+      <p>"The accommodation is affordable and close to campus. Highly recommend!" - John D.</p>
+    </div>
+    <div class="review">
+      <p>"Great facilities and friendly housemates. Loved my stay!" - Sarah K.</p>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>Contact Us: info@allansaccommodation.co.za | +27 123 456 7890</p>
+    <p>&copy; 2024 Allan's Accommodation</p>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
+"""
+
+# Save the enhanced HTML to a new file for preview
+enhanced_html_file_path = '/mnt/data/Allans-Accomodation-main/Allans-Accomodation-main/enhanced_index.html'
+with open(enhanced_html_file_path, 'w') as file:
+    file.write(enhanced_html_content)
+
+enhanced_html_file_path
