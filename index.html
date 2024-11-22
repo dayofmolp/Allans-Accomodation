@@ -30,15 +30,15 @@
     <section id="properties" class="properties">
         <h2>Our Properties</h2>
         <div class="property-list">
-            <div class="property">
+            <div class="property" onclick="showNsfasPopup('kasselvlei')">
                 <h3>Kasselvlei Road</h3>
                 <p>Details about this property...</p>
-                <button class="more-info-btn" onclick="showModal('kasselvlei')">More Info</button>
+                <button class="more-info-btn">More Info</button>
             </div>
-            <div class="property">
+            <div class="property" onclick="showNsfasPopup('durham')">
                 <h3>Durham Road</h3>
                 <p>Details about this property...</p>
-                <button class="more-info-btn" onclick="showModal('durham')">More Info</button>
+                <button class="more-info-btn">More Info</button>
             </div>
             <!-- Add more properties here -->
         </div>
@@ -85,12 +85,12 @@
         </div>
     </section>
 
-    <!-- Modal Popup for More Info -->
-    <div id="property-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeModal()">&times;</span>
-            <h3>Property Details</h3>
-            <p id="modal-content">Loading...</p>
+    <!-- NSFAS Popup Modal -->
+    <div id="nsfas-popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closeNsfasPopup()">&times;</span>
+            <h3>NSFAS Accredited</h3>
+            <p>This property is NSFAS accredited, making it a great choice for students.</p>
         </div>
     </div>
 
