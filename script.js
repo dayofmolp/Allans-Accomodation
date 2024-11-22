@@ -1,31 +1,41 @@
-// Scroll to a section
+// Scroll to Section Function
 function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+  const section = document.getElementById(id);
+  section.scrollIntoView({ behavior: 'smooth' });
 }
 
-// Show NSFAS Pop-up for Property
-function showNsfasPopup(property) {
-    const popup = document.getElementById('nsfas-popup');
-    const modalContent = document.querySelector('.popup-content p');
-    
-    modalContent.innerHTML = `This property (${property}) is NSFAS accredited, making it a great choice for students.`;
-    popup.style.display = 'block';
+// Property Popup (NSFAS Accredited Message)
+function showPopup(propertyName) {
+  alert(propertyName + " is NSFAS Accredited!");
 }
 
-// Close NSFAS Pop-up
-function closeNsfasPopup() {
-    document.getElementById('nsfas-popup').style.display = 'none';
-}
-
-// Form Validation (Example)
+// Booking Form Validation
 function validateForm() {
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    
-    if (!name || !email) {
-        alert('Please fill out all required fields.');
-        return false;
-    }
-    
-    return true;
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const property = document.getElementById('property').value;
+  const message = document.getElementById('message').value;
+
+  if (!name || !email || !property) {
+    alert('Please fill in all required fields.');
+    return false;
+  }
+  alert('Thank you for your booking! We will get in touch soon.');
+  return true;
 }
+
+// Review Carousel Navigation
+let currentIndex = 0;
+const reviews = document.querySelectorAll('.reviews-carousel .review');
+
+function showNextReview() {
+  reviews[currentIndex].style.display = 'none';  // Hide current review
+  currentIndex = (currentIndex + 1) % reviews.length;  // Go to next review (loop)
+  reviews[currentIndex].style.display = 'block';  // Show next review
+}
+
+// Start the review carousel to auto-scroll every 5 seconds
+setInterval(showNextReview, 5000);
+
+// Initially show the first review
+reviews[currentIndex].style.display = 'block';
