@@ -1,91 +1,106 @@
-# Define an updated version of the HTML with placeholders for the new features
-enhanced_html_content = """
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Allan's Accommodation</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Allan's Accommodation</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <header class="hero">
-    <h1>Allan's Accommodation</h1>
-    <p>Premium Student Housing in Bellville South, Cape Town</p>
-    <p>NSFAS Accredited | Bursaries Accepted | Shuttle Routes Nearby</p>
-    <button onclick="scrollToSection('properties')">View Properties</button>
-  </header>
+    <!-- Header with Navigation Bar -->
+    <header class="hero">
+        <nav>
+            <ul class="nav-list">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#student-tips">Student Tips</a></li>
+                <li><a href="#booking">Book Your Stay</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+            </ul>
+        </nav>
+        <h1>Allan's Accommodation</h1>
+        <p>Premium Student Housing in Bellville South, Cape Town</p>
+        <p>NSFAS Accredited | Bursaries Accepted | Shuttle Routes Nearby</p>
+        <button onclick="scrollToSection('properties')">View Properties</button>
+    </header>
 
-  <!-- Properties Section -->
-  <section id="properties" class="properties">
-    <h2>Our Properties</h2>
-    <div class="property-list">
-      <div class="property">
-        <h3>Kasselvlei Road</h3>
-        <p>Details about this property...</p>
-      </div>
-      <div class="property">
-        <h3>Durham Road</h3>
-        <p>Details about this property...</p>
-      </div>
-      <!-- Add other properties here -->
+    <!-- Properties Section -->
+    <section id="properties" class="properties">
+        <h2>Our Properties</h2>
+        <div class="property-list">
+            <div class="property">
+                <h3>Kasselvlei Road</h3>
+                <p>Details about this property...</p>
+                <button class="more-info-btn" onclick="showModal('kasselvlei')">More Info</button>
+            </div>
+            <div class="property">
+                <h3>Durham Road</h3>
+                <p>Details about this property...</p>
+                <button class="more-info-btn" onclick="showModal('durham')">More Info</button>
+            </div>
+            <!-- Add more properties here -->
+        </div>
+    </section>
+
+    <!-- Student Tips Section -->
+    <section id="student-tips" class="student-tips">
+        <h2>Student Tips</h2>
+        <ul>
+            <li>Tip 1: Always pay your rent on time to maintain a good relationship with the landlord.</li>
+            <li>Tip 2: Keep communal areas clean to ensure harmony with housemates.</li>
+            <li>Tip 3: Use public transport options near the housing to save costs.</li>
+        </ul>
+    </section>
+
+    <!-- Booking Portal Section -->
+    <section id="booking" class="booking-portal">
+        <h2>Book Your Stay</h2>
+        <form action="#" method="POST" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="property">Preferred Property:</label>
+            <select id="property" name="property">
+                <option value="kasselvlei">Kasselvlei Road</option>
+                <option value="durham">Durham Road</option>
+                <!-- Add other properties -->
+            </select>
+            <label for="message">Message/Additional Requests:</label>
+            <textarea id="message" name="message"></textarea>
+            <button type="submit">Submit Booking</button>
+        </form>
+    </section>
+
+    <!-- User Reviews Section -->
+    <section id="reviews" class="reviews">
+        <h2>What Our Residents Say</h2>
+        <div class="review">
+            <p>"The accommodation is affordable and close to campus. Highly recommend!" - John D.</p>
+        </div>
+        <div class="review">
+            <p>"Great facilities and friendly housemates. Loved my stay!" - Sarah K.</p>
+        </div>
+    </section>
+
+    <!-- Modal Popup for More Info -->
+    <div id="property-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3>Property Details</h3>
+            <p id="modal-content">Loading...</p>
+        </div>
     </div>
-  </section>
 
-  <!-- Student Tips Section -->
-  <section id="student-tips" class="student-tips">
-    <h2>Student Tips</h2>
-    <ul>
-      <li>Tip 1: Always pay your rent on time to maintain a good relationship with the landlord.</li>
-      <li>Tip 2: Keep communal areas clean to ensure harmony with housemates.</li>
-      <li>Tip 3: Use public transport options near the housing to save costs.</li>
-    </ul>
-  </section>
+    <!-- Footer -->
+    <footer class="footer">
+        <p>Contact Us: info@allansaccommodation.co.za | +27 123 456 7890</p>
+        <p>&copy; 2024 Allan's Accommodation</p>
+    </footer>
 
-  <!-- Booking Portal -->
-  <section id="booking" class="booking-portal">
-    <h2>Book Your Stay</h2>
-    <form action="#" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="property">Preferred Property:</label>
-      <select id="property" name="property">
-        <option value="kasselvlei">Kasselvlei Road</option>
-        <option value="durham">Durham Road</option>
-        <!-- Add other properties as options -->
-      </select>
-      <label for="message">Message/Additional Requests:</label>
-      <textarea id="message" name="message"></textarea>
-      <button type="submit">Submit Booking</button>
-    </form>
-  </section>
-
-  <!-- User Reviews Section -->
-  <section id="reviews" class="reviews">
-    <h2>What Our Residents Say</h2>
-    <div class="review">
-      <p>"The accommodation is affordable and close to campus. Highly recommend!" - John D.</p>
-    </div>
-    <div class="review">
-      <p>"Great facilities and friendly housemates. Loved my stay!" - Sarah K.</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>Contact Us: info@allansaccommodation.co.za | +27 123 456 7890</p>
-    <p>&copy; 2024 Allan's Accommodation</p>
-  </footer>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
-"""
-
-# Save the enhanced HTML to a new file for preview
-enhanced_html_file_path = '/mnt/data/Allans-Accomodation-main/Allans-Accomodation-main/enhanced_index.html'
-with open(enhanced_html_file_path, 'w') as file:
-    file.write(enhanced_html_content)
-
-enhanced_html_file_path
